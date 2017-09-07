@@ -39,6 +39,8 @@ app.get('/', (request, response) => {
         title: 'Home Page',
         link: '/about',
         linkName: 'About',
+        link2: '/projects',
+        linkName2: 'Projects',
         welcome: 'Welcome to this test website using Node/Express'
     });
 });
@@ -47,6 +49,14 @@ app.get('/about', (request, response)=> {
     // response.send('<h1>About Page</h1>');
     response.render('about.hbs',{
         title: 'About Page template',
+        link: '/',
+        linkName: 'Home',
+    });
+});
+
+app.get('/projects', (request, response)=> {
+    response.render('projects.hbs',{
+        title: 'Portfolio of Projects',
         link: '/',
         linkName: 'Home',
     });
